@@ -25,7 +25,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{UNIX Basics}
-\label{chp:UNIXBasics}
+\label{sec:UNIXBasics}
 
 Terminal 
 
@@ -67,6 +67,7 @@ UNIX commands to learn: \vspace{-0.3cm}
 	\item pwd
 	\item rm
 	\item rmdir
+	\item rsync. An example of how the command can be used is: ``rsync -v username@host:~/path/to/file .''. The ``-v'' option runs the UNIX command in verbose mode.
 	\item touch
 	\item tree
 	\item type: type zrio
@@ -110,7 +111,67 @@ Discussed how to create aliases in UNIX.
 
 Configure my UNIX environment with the ``.bashrc'' (or ``.bash_profile'') file.
 
-GUI-based Galaxy is used for this class.
+GUI-based {\it Galaxy} is used for this class.
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{SSH Basics}
+\label{ssec:SSHBasics}
+
+File 
+
+
+
+
+
+
+There are many applications for downloading files from the Internet. The applications {\tt curl} and {\it wget} are more common for downloading files.
+
+The UNIX command {\tt ifconfig} gives you information about computer networking for your computer or computing account (if you are connected to a remote computer).
+
+
+There are many 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Shell Scripting Basics}
+\label{ssec:ShellScriptingBasics}
+
+Download data to group directory on ``Geiger'', so that I do not corrupt the local machine.
+
+Use ``tree'' to find out the directory structure of the specified directory. 
+
+For class on June 17, 2014, clone the repository from Prof. Aramayo, url{https://geiger.tamu.edu/gitlab/raramayo/digitalbiology_project_summer2014}. Work on this directory to practise the UNIX sub-lesson for today.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
