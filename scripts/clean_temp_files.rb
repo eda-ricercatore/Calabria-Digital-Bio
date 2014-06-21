@@ -1,7 +1,7 @@
 #!/usr/bin/ruby -w
 
 =begin
-	This is written by Zhiyang Ong for task automation.
+	This is written by Zhiyang Ong for removing temporary files.
  
 	Synopsis:
 	Script to remove all temporary files.
