@@ -38,6 +38,7 @@ import sys
 class Build_Seq_DB:
 	# ============================================================
 	#	Method to provide information on how to run this script.
+	@staticmethod
 	def how_to_use_script():
 		print "================================================="
 		print "==>	This script builds an Org-mode database for"
@@ -53,10 +54,11 @@ class Build_Seq_DB:
 		print "================================================="
 		#exit(1)
 	#	Make this method a static method.
-	how2use_script = staticmethod(how_to_use_script())
+	#how2use_script = staticmethod(how_to_use_script())
 	# ============================================================
 	#	Preconditions.
-	def static_preprocessing():
+	@staticmethod
+	def preprocessing():
 		print 'Enter preprocessing method.'
 		"""
 			Are two input arguments provided to the execution of this
@@ -70,15 +72,14 @@ class Build_Seq_DB:
 		if len(sys.argv) < 3:
 			print 'Number of arguments:', len(sys.argv), 'arguments.'
 			print "Store search results in:::", sys.argv
-			how2use_script()
+			Build_Seq_DB.how_to_use_script()
 		else:
 			print "how2use_script()"
 		#	Is the path to the Org-mode database file provided?
-		print 'Number of arguments:', len(sys.argv), 'arguments.'
-		return
+		print '#arguments:', len(sys.argv), 'arguments.'
 		#print "Store search results in:::", sys.argv[1]
 	#	Make this method a static method.
-	preprocessing = staticmethod(static_preprocessing())
+	#preprocessing = staticmethod(static_preprocessing())
 	# ============================================================
 	#	Method to process online search results.
 	def postprocessing():
