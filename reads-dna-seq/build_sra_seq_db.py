@@ -49,85 +49,85 @@
 import sys
 
 
-
 ###############################################################
-#	Function to provide information on how to run this script.
+#	Module with functions that builds the sequence database.
+class Build_Seq_DB:
 
-def how_to_use_script():
-	print "================================================="
-	print "==>	This script builds an Org-mode database for"
-	print "	SRA sequence reads in the NCBI database."
-	print
-	print "Required input arguments:"
-	print "1)	Org-mode database"
-	print "2)	URL to NCBI search results."
-	print
-	print "This script can be executed as follows:"
-	print "./build_sra_seq_db.py [Org-mode file] [input URL]"
-	print
-	print "================================================="
-	exit(1)
-
-
-
-
-###############################################################
-#	Preconditions.
-
-"""
-	Are two input arguments provided to the execution of this
-		script?
-	
-	"sys.argv" includes the name of the Python script as an
-		input argument to Python.
-	Hence, a Python script that was given 2 input arguments
-		would have 3 entries in "sys.argv".
-		
-	Therefore, check if number of elements in "sys.argv" < 3.
-"""
-if len(sys.argv) < 3:
-	how_to_use_script()
-else:
-	print "how_to_use_script()"
-
-#	Is the path to the Org-mode database file provided?
-print 'Number of arguments:', len(sys.argv), 'arguments.'
-
-
-#print "Store search results in:::", sys.argv[1]
+	# ============================================================
+	#	Function to provide information on how to run this script.
+	def how_to_use_script():
+		print "================================================="
+		print "==>	This script builds an Org-mode database for"
+		print "	SRA sequence reads in the NCBI database."
+		print
+		print "Required input arguments:"
+		print "1)	Org-mode database"
+		print "2)	URL to NCBI search results."
+		print
+		print "This script can be executed as follows:"
+		print "./build_sra_seq_db.py [Org-mode file] [input URL]"
+		print
+		print "================================================="
+		exit(1)
 
 
 
 
-
-
-###############################################################
-#	Process online information containing search results.
-
-print "==>	Start collecting SRA reads about search key."
-
-
-
-# For each search result from the NCBI database.
-
-	# Get its index.
-	# Get its accesion number.
-	# Get its URL.
-	# Go to its web page.
-	# Get its publication date.
-	# Get its FTP link.
-	# Get submitter's organization.
-
-
-
-
-###############################################################
-#	Dump information into the Org-mode database.
+	# ============================================================
+	#	Preconditions.
+	def preprocessing():
+		"""
+			Are two input arguments provided to the execution of this
+				script?
+			
+			"sys.argv" includes the name of the Python script as an
+				input argument to Python.
+			Hence, a Python script that was given 2 input arguments
+				would have 3 entries in "sys.argv".
+				
+			Therefore, check if number of elements in "sys.argv" < 3.
+		"""
+		if len(sys.argv) < 3:
+			how_to_use_script()
+		else:
+			print "how_to_use_script()"
+		#	Is the path to the Org-mode database file provided?
+		print 'Number of arguments:', len(sys.argv), 'arguments.'
+		#print "Store search results in:::", sys.argv[1]
 
 
 
 
 
+
+	# ============================================================
+	#	Process online information containing search results.
+	def postprocessing():
+		print "==>	Start collecting SRA reads about search key."
+
+
+
+	# For each search result from the NCBI database.
+
+		# Get its index.
+		# Get its accesion number.
+		# Get its URL.
+		# Go to its web page.
+		# Get its publication date.
+		# Get its FTP link.
+		# Get submitter's organization.
+
+
+
+
+	# ============================================================
+	#	Dump information into the Org-mode database.
+	def postprocessing():
+		print "==>	Start collecting SRA reads about search key."
+
+
+
+Build_Seq_DB().how_to_use_script()
 
 
 
