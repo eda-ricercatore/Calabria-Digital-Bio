@@ -125,7 +125,7 @@ class Build_Seq_DB:
 	def postprocessing():
 		print "==>	Start collecting SRA reads about search key."
 
-# Start working on static functions... Commit under my name.
+# Start working on static functions... Commit under my name. Is identity problem fixed?
 
 Build_Seq_DB().how_to_use_script()
 
