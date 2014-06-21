@@ -125,7 +125,7 @@ class Build_Seq_DB:
 	def postprocessing():
 		print "==>	Start collecting SRA reads about search key."
 
-# Start working on static functions
+# Start working on static functions... Commit under my name.
 
 Build_Seq_DB().how_to_use_script()
 
