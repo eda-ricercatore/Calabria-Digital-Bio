@@ -50,11 +50,10 @@ import sys
 
 
 ###############################################################
-#	Module with functions that builds the sequence database.
+#	Module with methods that builds the sequence database.
 class Build_Seq_DB:
-
 	# ============================================================
-	#	Function to provide information on how to run this script.
+	#	Method to provide information on how to run this script.
 	def how_to_use_script():
 		print "================================================="
 		print "==>	This script builds an Org-mode database for"
@@ -69,46 +68,38 @@ class Build_Seq_DB:
 		print
 		print "================================================="
 		exit(1)
-
-
-
-
+	#	Make this method a static method.
+	how2use_script = staticmethod(how_to_use_script())
 	# ============================================================
 	#	Preconditions.
-	def preprocessing():
+	def static_preprocessing():
+		print 'Enter preprocessing method.'
 		"""
 			Are two input arguments provided to the execution of this
 				script?
-			
 			"sys.argv" includes the name of the Python script as an
 				input argument to Python.
 			Hence, a Python script that was given 2 input arguments
 				would have 3 entries in "sys.argv".
-				
 			Therefore, check if number of elements in "sys.argv" < 3.
 		"""
 		if len(sys.argv) < 3:
-			how_to_use_script()
+			print 'Number of arguments:', len(sys.argv), 'arguments.'
+			print "Store search results in:::", sys.argv
+			how2use_script()
 		else:
-			print "how_to_use_script()"
+			print "how2use_script()"
 		#	Is the path to the Org-mode database file provided?
 		print 'Number of arguments:', len(sys.argv), 'arguments.'
+		return
 		#print "Store search results in:::", sys.argv[1]
-
-
-
-
-
-
+	#	Make this method a static method.
+	preprocessing = staticmethod(static_preprocessing())
 	# ============================================================
-	#	Process online information containing search results.
+	#	Method to process online search results.
 	def postprocessing():
 		print "==>	Start collecting SRA reads about search key."
-
-
-
 	# For each search result from the NCBI database.
-
 		# Get its index.
 		# Get its accesion number.
 		# Get its URL.
@@ -116,19 +107,16 @@ class Build_Seq_DB:
 		# Get its publication date.
 		# Get its FTP link.
 		# Get submitter's organization.
-
-
-
-
 	# ============================================================
-	#	Dump information into the Org-mode database.
+	#	Method to dump information into the Org-mode database.
 	def postprocessing():
 		print "==>	Start collecting SRA reads about search key."
 
-# Start working on static functions... Commit under my name. Is identity problem fixed?
 
-Build_Seq_DB().how_to_use_script()
 
+print "Ciao Mondo!!!"
+Build_Seq_DB.preprocessing()
+print "What's up"
 
 
 
