@@ -52,7 +52,7 @@ class Build_Seq_DB:
 		print "./build_sra_seq_db.py [Org-mode file] [input URL]"
 		print
 		print "================================================="
-		#exit(1)
+		exit(1)
 	#	Make this method a static method.
 	#how2use_script = staticmethod(how_to_use_script())
 	# ============================================================

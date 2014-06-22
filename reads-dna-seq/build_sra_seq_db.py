@@ -54,6 +54,7 @@ import sys
 class Build_Seq_DB:
 	# ============================================================
 	#	Method to provide information on how to run this script.
+	@staticmethod
 	def how_to_use_script():
 		print "================================================="
 		print "==>	This script builds an Org-mode database for"
@@ -68,11 +69,10 @@ class Build_Seq_DB:
 		print
 		print "================================================="
 		exit(1)
-	#	Make this method a static method.
-	how2use_script = staticmethod(how_to_use_script())
 	# ============================================================
 	#	Preconditions.
-	def static_preprocessing():
+	@staticmethod
+	def preprocessing():
 		print 'Enter preprocessing method.'
 		"""
 			Are two input arguments provided to the execution of this
@@ -84,19 +84,18 @@ class Build_Seq_DB:
 			Therefore, check if number of elements in "sys.argv" < 3.
 		"""
 		if len(sys.argv) < 3:
-			print 'Number of arguments:', len(sys.argv), 'arguments.'
+			print 'Number of arguments:', len(sys.argv) - 1, 'arguments.'
 			print "Store search results in:::", sys.argv
-			how2use_script()
+			Build_Seq_DB.how_to_use_script()
 		else:
 			print "how2use_script()"
 		#	Is the path to the Org-mode database file provided?
-		print 'Number of arguments:', len(sys.argv), 'arguments.'
+		print 'Number of arguments:', len(sys.argv) - 1, 'arguments.'
 		return
 		#print "Store search results in:::", sys.argv[1]
-	#	Make this method a static method.
-	preprocessing = staticmethod(static_preprocessing())
 	# ============================================================
 	#	Method to process online search results.
+	@staticmethod
 	def postprocessing():
 		print "==>	Start collecting SRA reads about search key."
 	# For each search result from the NCBI database.
@@ -114,6 +113,9 @@ class Build_Seq_DB:
 
 
 
+
+###############################################################
+#
 print "Ciao Mondo!!!"
 Build_Seq_DB.preprocessing()
 print "What's up"
