@@ -51,7 +51,7 @@ import sys
 
 ###############################################################
 #	Module with methods that builds the sequence database.
-class Build_Seq_DB:
+class build_sra_seq_db:
 	# ============================================================
 	#	Method to provide information on how to run this script.
 	@staticmethod
@@ -86,7 +86,7 @@ class Build_Seq_DB:
 		if len(sys.argv) < 3:
 			print 'Number of arguments:', len(sys.argv) - 1, 'arguments.'
 			print "Store search results in:::", sys.argv
-			Build_Seq_DB.how_to_use_script()
+			build_sra_seq_db.how_to_use_script()
 		else:
 			print "how2use_script()"
 		#	Is the path to the Org-mode database file provided?
@@ -115,9 +115,9 @@ class Build_Seq_DB:
 
 
 ###############################################################
-#
-print "Ciao Mondo!!!"
-Build_Seq_DB.preprocessing()
+# Main method for the program.
+print "Build a database of these SRA research results in the Org-mode file format."
+build_sra_seq_db.preprocessing()
 print "What's up"
 
 

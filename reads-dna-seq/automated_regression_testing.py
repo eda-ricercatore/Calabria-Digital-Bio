@@ -32,7 +32,9 @@
 ###############################################################
 #	Import modules from The Python Standard Library.
 import sys
-#import build_sra_seq_db.py
+#	Import Python modules that I have developed.
+import build_sra_seq_db
+#import Build_Seq_DB
 
 
 ###############################################################
@@ -41,8 +43,10 @@ import sys
 print "Run python script"
 #build_sra_seq_db.py asa sadsa wadqw qwqwqwqwqw
 #build_sra_seq_db.py(asa, sadsa, wadqw, qwqwqwqwqw)
-system("build_sra_seq_db.py asa sadsa, wadqw, qwqwqwqwqw")
-
+#system("build_sra_seq_db.py asa sadsa, wadqw, qwqwqwqwqw")
+if  __name__ =='__main__':
+	#Build_Seq_DB.preprocessing()
+	build_sra_seq_db.preprocessing()
 # Check if the script ran successfully.
 
 print "Executed python script"
