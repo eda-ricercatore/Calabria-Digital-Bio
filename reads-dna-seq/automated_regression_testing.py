@@ -38,6 +38,7 @@ import sys
 #from build_sra_seq_db import preprocessing
 #import Build_Seq_DB
 #from build_sra_seq_db import *
+from build_sra_seq_db import Build_Seq_DB
 
 ###############################################################
 #	Test the script for input errors
@@ -62,13 +63,13 @@ print "==	Executed python script"
 
 
 
-from build_sra_seq_db import print_me
+#from build_sra_seq_db import print_me
 print "#!!!#		What is going on?"
 if __name__ == '__print_me__':
 	print_me()
 print ">>	Done???"
 #build_sra_seq_db.preprocessing()
-
+Build_Seq_DB.preprocessing()
 
 
 

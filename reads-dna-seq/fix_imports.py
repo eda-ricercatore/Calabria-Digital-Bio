@@ -37,19 +37,20 @@ import sys
 #from build_sra_seq_db import preprocessing
 #from Build_Seq_DB import preprocessing
 #Build_Seq_DB = __import__("Build_Seq_DB")
+#Build_Seq_DB = __import__("build_sra_seq_db")
 Build_Seq_DB = __import__("build_sra_seq_db")
 
 ###############################################################
 #	Test the script for input errors
 
 print "==>>		Run python script"
-if __name__ == '__preprocessing__':
+if __name__ != '__preprocessing__':
 	#Build_Seq_DB.preprocessing()
 	#build_sra_seq_db.preprocessing()
-	preprocessing()
+	#preprocessing()
 # Check if the script ran successfully.
 print "==	Executed python script"
 #build_sra_seq_db.preprocessing()
 #preprocessing()
-Build_Seq_DB.preprocessing()
+#Build_Seq_DB.preprocessing()
 
