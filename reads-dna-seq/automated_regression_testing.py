@@ -13,7 +13,11 @@
 	
 	
 	This script can be executed as follows:
-	./automated_regression_testing.py
+	./automated_regression_testing.py [Org-mode file] [input URL]
+	
+	Parameters:
+	[Org-mode file]: File where the database is to be stored.
+	[input URL]: A URL that is given to the script as an input.
 """
 
 #	The MIT License (MIT)
@@ -33,50 +37,40 @@
 #	Import modules from The Python Standard Library.
 import sys
 #	Import Python modules that I have developed.
-#import build_sra_seq_db
-#from build_sra_seq_db import *
-#from build_sra_seq_db import preprocessing
-#import Build_Seq_DB
-#from build_sra_seq_db import *
 from build_sra_seq_db import Build_Seq_DB
 
 ###############################################################
 #	Test the script for input errors
 
-print "==>>		Run python script"
-#build_sra_seq_db.py asa sadsa wadqw qwqwqwqwqw
-#build_sra_seq_db.py(asa, sadsa, wadqw, qwqwqwqwqw)
-#system("build_sra_seq_db.py asa sadsa, wadqw, qwqwqwqwqw")
-#if  __name__ =='__main__':
-if __name__ == '__preprocessing__':
-	#Build_Seq_DB.preprocessing()
-	#from build_sra_seq_db import preprocessing
-	from build_sra_seq_db import *
-	build_sra_seq_db.preprocessing()
-	preprocessing()
-# Check if the script ran successfully.
-#build_sra_seq_db.preprocessing()
+print "##################################################"
+print "==>>	Test preprocessing."
+#	Commence preprocessing for building the database.
+#temp_array = sys.argv
 
-print "==	Executed python script"
-
-
-
-
-
-#from build_sra_seq_db import print_me
-print "#!!!#		What is going on?"
-if __name__ == '__print_me__':
-	print_me()
-print ">>	Done???"
-#build_sra_seq_db.preprocessing()
+#	--------------------------------------------------------
+#	Test script with no input.
+sys.argv = ['./automated_regression_testing.py']
+try:
+	Build_Seq_DB.preprocessing()
+except Exception:
+	print "	# No input argument test=		Passed."
+#	--------------------------------------------------------
+#	Test script with 1 input.
+sys.argv = ['./automated_regression_testing.py', 'input1']
+try:
+	Build_Seq_DB.preprocessing()
+except Exception:
+	print "	# 1 input argument test=		Passed."
+#	--------------------------------------------------------
+#	Test script with 2 inputs.
+sys.argv = ['./automated_regression_testing.py', 'input1', 'input2']
 Build_Seq_DB.preprocessing()
-
-
-
-
-
-
-
+print "	# 2 input argument test=		Passed."
+#	--------------------------------------------------------
+#	Test script with 5 inputs.
+sys.argv = ['./automated_regression_testing.py', 'input1', 'input2', 'input3', 'input4', 'input5']
+Build_Seq_DB.preprocessing()
+print "	# 5 input argument test=		Passed."
 
 
 

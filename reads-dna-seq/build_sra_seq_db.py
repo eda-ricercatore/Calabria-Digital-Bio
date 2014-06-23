@@ -68,11 +68,13 @@ class Build_Seq_DB:
 		print "./build_sra_seq_db.py [Org-mode file] [input URL]"
 		print
 		print "================================================="
-		exit(1)
+		# Inform the user what went wrong.
+		raise Exception("Error with input arguments.")
 	# ============================================================
 	#	Preconditions.
 	@staticmethod
 	def preprocessing():
+		print '-------------------------------------------------'
 		print 'Enter preprocessing method.'
 		"""
 			Are two input arguments provided to the execution of this
@@ -85,10 +87,8 @@ class Build_Seq_DB:
 		"""
 		if len(sys.argv) < 3:
 			print 'Number of arguments:', len(sys.argv) - 1, 'arguments.'
-			print "Store search results in:::", sys.argv
+			print "Input Arguments are:::", sys.argv
 			Build_Seq_DB.how_to_use_script()
-			#how_to_use_script()
-			#build_sra_seq_db.how_to_use_script()
 		else:
 			print "how2use_script()"
 		#	Is the path to the Org-mode database file provided?
@@ -97,7 +97,7 @@ class Build_Seq_DB:
 		#print "Store search results in:::", sys.argv[1]
 	# ============================================================
 	#	Method to process online search results.
-	#@staticmethod
+	@staticmethod
 	def process_online_search():
 		print "==>	Start collecting SRA reads about search key."
 	# For each search result from the NCBI database.
@@ -110,34 +110,20 @@ class Build_Seq_DB:
 		# Get submitter's organization.
 	# ============================================================
 	#	Method to dump information into the Org-mode database.
-	#@staticmethod
+	@staticmethod
 	def postprocessing():
 		print "==>	Start collecting SRA reads about search key."
-	def print_me():
-		print 'Printed Statement.'
-	#	If this is executed as a Python script,
-	if __name__ == "__main__":
-		#	Carry out preprocessing.
-		#Build_Seq_DB.preprocessing()
-		#build_sra_seq_db.preprocessing()
-		preprocessing()
-		print_me()
-"""
-	def main():
-	print 'Execute the main method.'
-"""
 
 
 ###############################################################
 # Main method for the program.
 
-#print "==================================================="
-#print "Build a database of these SRA research results in the Org-mode file format."
-#Build_Seq_DB.preprocessing()
-#print "What's up"
-
-
-#__all__ = ['preprocessing', 'print_me']
+#	If this is executed as a Python script,
+if __name__ == "__main__":
+	print "==================================================="
+	print "Build a database of these SRA research results in the Org-mode file format."
+	#	Carry out preprocessing.
+	Build_Seq_DB.preprocessing()
 
 
 
