@@ -33,54 +33,23 @@
 #	Import modules from The Python Standard Library.
 import sys
 #	Import Python modules that I have developed.
-#import build_sra_seq_db
-#from build_sra_seq_db import *
+#from build_sra_seq_db import Build_Seq_DB
 #from build_sra_seq_db import preprocessing
-#import Build_Seq_DB
-#from build_sra_seq_db import *
+#from Build_Seq_DB import preprocessing
+#Build_Seq_DB = __import__("Build_Seq_DB")
+Build_Seq_DB = __import__("build_sra_seq_db")
 
 ###############################################################
 #	Test the script for input errors
 
 print "==>>		Run python script"
-#build_sra_seq_db.py asa sadsa wadqw qwqwqwqwqw
-#build_sra_seq_db.py(asa, sadsa, wadqw, qwqwqwqwqw)
-#system("build_sra_seq_db.py asa sadsa, wadqw, qwqwqwqwqw")
-#if  __name__ =='__main__':
 if __name__ == '__preprocessing__':
 	#Build_Seq_DB.preprocessing()
-	#from build_sra_seq_db import preprocessing
-	from build_sra_seq_db import *
-	build_sra_seq_db.preprocessing()
+	#build_sra_seq_db.preprocessing()
 	preprocessing()
 # Check if the script ran successfully.
-#build_sra_seq_db.preprocessing()
-
 print "==	Executed python script"
-
-
-
-
-
-from build_sra_seq_db import print_me
-print "#!!!#		What is going on?"
-if __name__ == '__print_me__':
-	print_me()
-print ">>	Done???"
 #build_sra_seq_db.preprocessing()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#preprocessing()
+Build_Seq_DB.preprocessing()
 

@@ -96,7 +96,7 @@ class build_sra_seq_db:
 	# ============================================================
 	#	Method to process online search results.
 	@staticmethod
-	def postprocessing():
+	def process_online_search():
 		print "==>	Start collecting SRA reads about search key."
 	# For each search result from the NCBI database.
 		# Get its index.
@@ -108,20 +108,23 @@ class build_sra_seq_db:
 		# Get submitter's organization.
 	# ============================================================
 	#	Method to dump information into the Org-mode database.
+	@staticmethod
 	def postprocessing():
 		print "==>	Start collecting SRA reads about search key."
-
-
+	def main():
+		print 'Execute the main method.'
+	def print_me():
+		print 'Printed Statement.'
 
 
 ###############################################################
 # Main method for the program.
-print "Build a database of these SRA research results in the Org-mode file format."
-build_sra_seq_db.preprocessing()
-print "What's up"
+#	print "Build a database of these SRA research results in the Org-mode file format."
+#	build_sra_seq_db.preprocessing()
+#	print "What's up"
 
 
-
+__all__ = ['preprocessing', 'print_me']
 
 
 
