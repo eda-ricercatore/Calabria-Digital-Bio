@@ -46,42 +46,44 @@ Anatomy of UNIX commands: {\tt command\_name [options] [arguments]}. Double dash
 
 The ``{\tt man}'' page is the UNIX manual. To find documentation of a UNIX command, use the {\tt man} command. \\
 
-{\tt SSH} is an application that allows me to connect securely to another computer that is connected to the same computer network, or to the Internet. \\
-
-{\tt rsync} is an application for file copying and synchronization between different computer accounts. It does not copy all files in your directory, but copy modifications to existing files and copies only new files. It transfers files in compressed format. \\
 
 
 
 UNIX commands to learn: \vspace{-0.3cm}
 \begin{enumerate}	\itemsep -4pt
-	\item alias: ``alias ll''
-	\item apropos: ``apropos copy'' would search the UNIX ``man'' pages for the keyword ``copy''.
-	\item cat: conCATenate
-	\item cd
-	\item chmod: Change mode
-	\item clear
-	\item cp: cp --version
-	\item dir -l
-	\item date
-	\item du: ``du -hd 0 .'' list the size of the directory in KB, and ``du -hd 1 .'' list the size of the directory and its files. ``df -h'' indicates the size of the directory and its contents. 
-	\item echo: ``echo -e'' refers to {\tt echo} enhanced, which redirects the output in the UNIX pipeline to a file. {\it echo -e `` `date`'' $>$ tata1}. ``echo \$PATH''
-	\item file
-	\item history
-	\item info cp
-	\item less
-	\item ls [-al]
-	\item more
-	\item mkdir
-	\item mv
-	\item pwd
-	\item rm
-	\item rmdir
-	\item rsync. An example of how the command can be used is: ``rsync -v username@host:$\sim$/path/to/file .''. The ``-v'' option runs the UNIX command in verbose mode.
-	\item touch
-	\item tree
-	\item type: type zrio
-	\item whatis
-	\item which: which blastn
+\item alias: ``alias ll''
+\item apropos: ``apropos copy'' would search the UNIX ``man'' pages for the keyword ``copy''.
+\item cat: conCATenate
+\item cd
+\item chmod: Change mode
+\item clear
+\item cp: cp --version
+\item dir -l
+\item date
+\item du: ``du -hd 0 .'' list the size of the directory in KB, and ``du -hd 1 .'' list the size of the directory and its files. ``df -h'' indicates the size of the directory and its contents. 
+\item echo: ``echo -e'' refers to {\tt echo} enhanced, which redirects the output in the UNIX pipeline to a file. {\it echo -e `` `date`'' $>$ tata1}. ``echo \$PATH''
+\item file
+\item history
+\item info cp
+\item less
+\item ls [-al]
+\item more
+\item mkdir
+\item mv
+\item pwd
+\item rm
+\item rmdir
+\item rsync: \vspace{-0.3cm}
+	\begin{enumerate} \itemsep -2pt
+	\item An example of how the command can be used is: ``rsync -v username@host:$\sim$/path/to/file .''. This commands copies the file at the specified path to the current working directory. The ``-v'' option runs the UNIX command in verbose mode.
+	\item Its ``-vr'' option runs the command recursively in verbose mode.
+	\item Prof. Aramayo mentioned something about an option that transfers files with automatic compression and decompression. Is this option ``-a'', or something else? Use the ``tar'' command to compress/uncompress files.
+	\end{enumerate}
+\item touch
+\item tree
+\item type: type zrio
+\item whatis
+\item which: which blastn
 \end{enumerate}
 
 
@@ -118,34 +120,50 @@ Most files have the file permissions set as 755. \\
 
 Discussed how to create aliases in UNIX. \\
 
-Configure my UNIX environment with the ``.bashrc'' (or ``.bash\_profile'') file. \\
+Configure my UNIX environment with the ``.bashrc'' (or ``.bash\_profile'') file.  \\
+
+The {\tt .profile} is used by {\tt shell}, and is equivalent to {\tt .bashrc} for Bash. \\
 
 GUI-based {\it Galaxy} is used for this class. \\
 
 
+Regarding file transfer, avoid unencrypted file transfer that can be accessed by others. People can listen or snoop on the packet transmission of files, and find out what you are doing. An aside: Email service providers, such as Google, transmit emails between their servers without encryption. \\
+
+There are many applications for downloading files from the Internet. The applications {\tt curl} and {\it wget} are more common for downloading files. \\
+
+The UNIX command {\tt ifconfig} gives you information about computer networking for your computer or computing account (if you are connected to a remote computer). \\
 
 
 
 
 
+Further references in my research database about UNIX include the following: \cite{Apple2011,Kernighan1984,Kerrisk2010,Mitchell2001,Petersen2008,Raymond2004,Raymond2004a,Rochkind2004,Rosen2007a,Stallings2005,Stevens2013,Storimer2012,VibrantPublishers2010a,VibrantPublishers2011b,VibrantPublishers2011c,VibrantPublishers2011h}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{SSH Basics}
 \label{ssec:SSHBasics}
 
-File 
+
+{\tt SSH} is an application that allows me to connect securely to another computer that is connected to the same computer network, or to the Internet. It uses encryption for network connection, including file transfer between computers in the same network, or between different networks. Its various levels of encryption correspond to various levels of simplicity in the encryption. \\
+
+
+The actual/real {\tt SSH} application requires paid subscription. However, its open source variant is FREE!!! \\
+
+SSH key generation creates a pair of private and public keys. Keep the private key private to myself (only). Allow others to have the public key, so that a valid authentication of myself can be made. \\
 
 
 
 
 
 
-There are many applications for downloading files from the Internet. The applications {\tt curl} and {\it wget} are more common for downloading files.
-
-The UNIX command {\tt ifconfig} gives you information about computer networking for your computer or computing account (if you are connected to a remote computer).
 
 
-There are many 
+
+
+{\tt rsync} is an application for file copying and synchronization between different computer accounts. It does not copy all files in your directory, but copy modifications to existing files and copies only new files. It transfers files in compressed format. That is, it transfer files between different computers by synchronizing them via delta modifications. This is because copying entire directories of huge files take a lot of time. Hence, use {\tt rsync} to carry out file transfer to save time. {\tt rsync} uses the public key of SSH (from SSH key generation) to connect the local machine to the remote machine. For example, I can create the authentication file (SSH public key) and transfer the public key to the remote machine. \\
+
+
+
 
 
 
@@ -153,9 +171,15 @@ There are many
 \subsection{Shell Scripting Basics}
 \label{ssec:ShellScriptingBasics}
 
-Download data to group directory on ``Geiger'', so that I do not corrupt the local machine.
+To review the basics of UNIX shell script, see my internship report (and associated material) for my internship at the Institute of Microelectronics, Singapore \cite{Ong2004a}.
 
-Use ``tree'' to find out the directory structure of the specified directory. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Related Issues}
+\label{sssec:ShellScriptingBasics:RelatedIssues}
+
+Download data to group directory on ``Geiger'', so that I do not corrupt the local machine. \\
+
+Use ``tree'' to find out the directory structure of the specified directory. \\
 
 For class on June 17, 2014, clone the repository from Prof. Aramayo, \url{https://geiger.tamu.edu/gitlab/raramayo/digitalbiology_project_summer2014}. Work on this directory to practise the UNIX sub-lesson for today.
 
@@ -164,14 +188,27 @@ For class on June 17, 2014, clone the repository from Prof. Aramayo, \url{https:
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Version Control (Or Revision Control)}
+\label{ssec:ShellScriptingBasics}
+
+Revision control is also known as version control or source control. It is an aspect of software configuration management (SCM). For this class, {\tt Git} \cite{Chacon2009,Swicegood2010,Humble2011,VibrantPublishers2012b,Fox2013} will be our revision control tool. \\
+
+{\tt git status} tells me the status of my {\tt Git} repository. {\tt git diff} tells me the difference between different commits/stages of my repository. Watch videos about {\tt Git} to learn more about {\tt Git}, via hyperlinks provided on the class Wiki. Also, read ``{\tt Git} in the Trenches.'' \\
+
+While adding files to my {\tt Git} repository, use the {\tt Markdown} language to provide some structure to the presentation of information for my project repository. Save files in the {\tt Markdown} language as {\tt filename.md}. {\tt Markdown} is a document markup language, just like \LaTeX, HTML, and XML. \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Other Computing Issues}
+\label{sec:OtherComputingIssues}
 
 
+%	genomics01.bio.tamu.edu
+%	usr:	dbiology
+%	passwd (integralmente)
 
 
-
-
-
-
+Launch system monitor to track how much CPU time are processes taking. 
 
 
 
