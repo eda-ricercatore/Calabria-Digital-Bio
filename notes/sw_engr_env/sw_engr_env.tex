@@ -29,9 +29,18 @@
 
 My TA, Ricardo, suggested using Guake (\url{http://en.wikipedia.org/wiki/Guake}) as a substitute for the common/normal {\tt Terminal} application. \\
 
-We will be using the {\tt Terminal} to do a lot of our work in this class. Prof. Rodolfo Aramayo briefly talked about the history of UNIX and its derivatives, such as {\it Linux}, {\it BSD}, {\it Oracle/SUN Solaris}, and {\it Mac OS X}. He also talked about the UNIX philosophy. \\
+We will be using the {\tt Terminal} to do a lot of our work in this class. Prof. Rodolfo Aramayo briefly talked about the history of UNIX and its derivatives, such as {\it Linux}, {\it BSD}, {\it Oracle/SUN Solaris}, and {\it Mac OS X}. UNIX was started at {\it Bell Labs}. He also talked about the UNIX philosophy. \\
 
 We shall operate in the UNIX environment via text files. Everything (including directories) is a file in UNIX. Some files can be read visually (i.e., text files), while others (i.e., binary files) cannot. \\
+
+
+
+
+The kernel is the heart of the operating system. The UNIX shell (accessed via applications, such as the {\tt Terminal}) is an application that allows users to interact with the kernel indirectly. \\
+
+
+
+
 
 Anatomy of UNIX commands: {\tt command\_name [options] [arguments]}. Double dashes for options of UNIX commands cannot be combined. However, for options for single dash lines, they can be combined. \\
 
@@ -47,7 +56,7 @@ UNIX commands to learn: \vspace{-0.3cm}
 \begin{enumerate}	\itemsep -4pt
 	\item alias: ``alias ll''
 	\item apropos: ``apropos copy'' would search the UNIX ``man'' pages for the keyword ``copy''.
-	\item cat
+	\item cat: conCATenate
 	\item cd
 	\item chmod: Change mode
 	\item clear
@@ -55,7 +64,7 @@ UNIX commands to learn: \vspace{-0.3cm}
 	\item dir -l
 	\item date
 	\item du: ``du -hd 0 .'' list the size of the directory in KB, and ``du -hd 1 .'' list the size of the directory and its files. ``df -h'' indicates the size of the directory and its contents. 
-	\item echo: ``echo -e'' refers to {\tt echo} enhanced, which redirects the output in the UNIX pipeline to a file. {\it echo -e "`date`" > tata1}. ``echo \$PATH''
+	\item echo: ``echo -e'' refers to {\tt echo} enhanced, which redirects the output in the UNIX pipeline to a file. {\it echo -e `` `date`'' $>$ tata1}. ``echo \$PATH''
 	\item file
 	\item history
 	\item info cp
@@ -67,7 +76,7 @@ UNIX commands to learn: \vspace{-0.3cm}
 	\item pwd
 	\item rm
 	\item rmdir
-	\item rsync. An example of how the command can be used is: ``rsync -v username@host:~/path/to/file .''. The ``-v'' option runs the UNIX command in verbose mode.
+	\item rsync. An example of how the command can be used is: ``rsync -v username@host:$\sim$/path/to/file .''. The ``-v'' option runs the UNIX command in verbose mode.
 	\item touch
 	\item tree
 	\item type: type zrio
@@ -76,42 +85,42 @@ UNIX commands to learn: \vspace{-0.3cm}
 \end{enumerate}
 
 
-Use ``tab'' to autocomplete filenames and directory names. Avoid using spaces in filenames and directories to keep file and directory access simple.
+Use ``tab'' to autocomplete filenames and directory names. Avoid using spaces in filenames and directories to keep file and directory access simple. \\
 
-Directory access: The ``.'' file is the current working directory, and the ``..'' is the parent directory. A directory can also be called a folder. By using the {\tt cd}
+Directory access: The ``.'' file is the current working directory, and the ``..'' is the parent directory. A directory can also be called a folder. By using the {\tt cd} command, I can return to my home directory. \\
 
-You cannot undo operations in UNIX. Hence, save and backup files before performing removal operations in UNIX. There is also no ``trash can'' or ``recycle bin''.
+You cannot undo operations in UNIX. Hence, save and backup files before performing removal operations in UNIX. There is also no ``trash can'' or ``recycle bin''. \\
 
-Microsoft Excel has a maximum limit of 65,000 rows in the spreadsheet.
+Microsoft Excel has a maximum limit of 65,000 rows in the spreadsheet. Hence, this limits the amount of information that I can process with Microsoft Excel. To process more data, such as GBs or TBs of data, I need other software applications or develop my own computer program. \\ 
 
-Symbolic links in UNIX are like shortcuts or aliases in Windows. An example of creating a symbolic link is: ``ln -s ../01/test01''.
+Symbolic links in UNIX are like shortcuts or aliases in Windows. An example of creating a symbolic link is: ``ln -s ../01/test01''. \\
 
-The human genome has been decoded into a file about 7 TB.
+The human genome has been decoded into a file about 7 TB. \\
 
-The colon ``:'' serves as a dummy placeholder to remove the contents of a file; ``: > filename''
+The colon ``:'' serves as a dummy placeholder to remove the contents of a file; ``: $>$ filename'' \\
 
-Standard output stream, {\tt stdout}, is described along with exit signals of UNIX processes. Standard error output stream will write to the standard error output file. UNIX redirection for standard output and error streams are described.
+Standard output stream, {\tt stdout}, is described along with exit signals of UNIX processes. Standard error output stream will write to the standard error output file. UNIX redirection for standard output and error streams are described. \\
 
-Use {\it tree} to show contents of a directory as a tree.
+Use {\it tree} to show contents of a directory as a tree. \\
 
-Discussed UNIX path redirection, pipelining of UNIX commands, and separate execution of UNIX commands (using the semicolon ``;'' symbol).
+Discussed UNIX path redirection, pipelining of UNIX commands, and separate execution of UNIX commands (using the semicolon ``;'' symbol). \\
 
-Covered special/escape characters to use tabs and newlines to print information.
+Covered special/escape characters to use tabs and newlines to print information. \\
 
-Covered information on how to go to the ``home'' directory. ``$\sim$'' refers to the home directory.
+Covered information on how to go to the ``home'' directory. ``$\sim$'' refers to the home directory. \\
 
 
-Covered absolute paths and relative paths in UNIX.
+Covered absolute paths and relative paths in UNIX. \\
 
-Detailed explanation of the ``ls'' command. It indicates when the file has been created/modified. It also indicates the size of the file in bytes. It also indicates the username (``db0015'') and the group (``student'') that I belong to. Permissions to access files are determined by the group that I belong to. File permissions are indicated for read, write, and execute. They are set for individual users, groups, and everybody with access to the computer network/system. File types are indicated for directories (``d''), regular/normal files (``-''), and symbolic links (``l'').
+Detailed explanation of the ``ls'' command. It indicates when the file has been created/modified. It also indicates the size of the file in bytes. It also indicates the username (``db0015'') and the group (``student'') that I belong to. Permissions to access files are determined by the group that I belong to. File permissions are indicated for read, write, and execute. They are set for individual users, groups, and everybody with access to the computer network/system. File types are indicated for directories (``d''), regular/normal files (``-''), and symbolic links (``l''). \\
 
-Most files have the file permissions set as 755.
+Most files have the file permissions set as 755. \\
 
-Discussed how to create aliases in UNIX.
+Discussed how to create aliases in UNIX. \\
 
-Configure my UNIX environment with the ``.bashrc'' (or ``.bash\_profile'') file.
+Configure my UNIX environment with the ``.bashrc'' (or ``.bash\_profile'') file. \\
 
-GUI-based {\it Galaxy} is used for this class.
+GUI-based {\it Galaxy} is used for this class. \\
 
 
 
