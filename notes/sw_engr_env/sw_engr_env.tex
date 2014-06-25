@@ -79,6 +79,14 @@ UNIX commands to learn: \vspace{-0.3cm}
 	\item Its ``-vr'' option runs the command recursively in verbose mode.
 	\item Prof. Aramayo mentioned something about an option that transfers files with automatic compression and decompression. Is this option ``-a'', or something else? Use the ``tar'' command to compress/uncompress files.
 	\end{enumerate}
+\item script: \vspace{-0.3cm}
+	\begin{enumerate} \itemsep -2pt
+	\item Use this UNIX command to keep a log of the terminal session. That is, use it to record the terminal session. Some {\tt Terminal} applications allow people to save the terminal session as a text file.
+	\item Prof. Aramayo suggested redirecting the standard output stream to a file to keep a record of the commands that are executed and their standard output. However, this requires appending each UNIX command with the redirection symbols.
+	\item {\tt unix-command} $>$ zlog \&. This creates a new file, if the file {\tt zlog} does not exist, and redirects the standard output to the logfile ({\tt zlog}). Using the ampersand symbol allows the command to be run in the background while allowing me to continue using the {\tt Terminal} application.
+	\item {\tt unix-command} $>>$ zlog \&. This creates a new file, if the file {\tt zlog} does not exist, and redirects the standard output to the logfile ({\tt zlog}). However, if the file {\tt zlog} already exist, the redirected standard output would be appended to the end of the logfile ({\tt zlog}).
+	\item Put {\tt \&$>$ slog \&} at the end of each command???
+	\end{enumerate}
 \item touch
 \item tree
 \item type: type zrio
@@ -168,8 +176,8 @@ SSH key generation creates a pair of private and public keys. Keep the private k
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Shell Scripting Basics}
-\label{ssec:ShellScriptingBasics}
+\subsubsection{Shell Scripting Basics}
+\label{sssec:ShellScriptingBasics}
 
 To review the basics of UNIX shell script, see my internship report (and associated material) for my internship at the Institute of Microelectronics, Singapore \cite{Ong2004a}.
 
@@ -190,7 +198,7 @@ For class on June 17, 2014, clone the repository from Prof. Aramayo, \url{https:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Version Control (Or Revision Control)}
-\label{ssec:ShellScriptingBasics}
+\label{ssec:Version Control}
 
 Revision control is also known as version control or source control. It is an aspect of software configuration management (SCM). For this class, {\tt Git} \cite{Chacon2009,Swicegood2010,Humble2011,VibrantPublishers2012b,Fox2013} will be our revision control tool. \\
 
