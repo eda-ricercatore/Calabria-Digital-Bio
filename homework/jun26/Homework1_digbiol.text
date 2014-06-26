@@ -1,0 +1,76 @@
+ Homework 1   Group 006                       Digital Biology
+
+Diana N. Medina
+Selene Y. Howe
+Zhiyang Ong
+
+
+Problem: SRR826660 small read does not map into Linkage group VII of Neurospora crassa or its genome. 
+
+Hypothesis: This is due because the SRR826660 is not part of the Neurospora crassa genome and belongs to another species.
+
+Experimental Design: Download the SRR82660 file and the reference sequence of Neurospora crassa genome from a reliable source. Prepare the files by running FastQC and split the files into its foward and reverse strands (Paired end read). Determine the number of reads in the file. We tested 10% of the reads because we decided to test the entire genome, 100% would have been time consuming. Run bowtie-build on N. crassa entire genome to obtain its reference sequence. Using Bowtie we mapped the reads of SRR826660 with v=0 (zero mismatches) and m=1 (only one reportable alignment per read) to the N. crassa genome and obtain sam files. Interpret results.
+
+Steps of Experiment:
+
+Step 1: Log in to geiger. Download SRR826660 file from NCBI:  wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR826/SRR826660/SRR826660.sra and also download the referece sequence: neurospora_crassa_or74a_12_supercontigs.fasta ./NcraOR74A_LGVII.fasta.refseq
+
+
+Step 2: Prepare the FastQ files: -p ~/corsi/digital_biology/20140612/sratoolkit.2.3.5-2-ubuntu64/bin/fastq-dump --split-files SRR826660.sra
+
+Step 3: Run FastQC to check the FastQ files.
+fastqc SRR826660_1.fastq
+fastqc SRR826660_2.fastq
+
+Step 4: Determine the number of reads in the file.
+more ./SRR826660_1.fastq | wc -l
+more ./SRR826660_2.fastq | wc -l
+ Divide expression by 4.
+ Get 10% of the result to get 10% of the reads.
+Go Trojans >more ./SRR826660_1.fastq | wc -l
+	183315376
+	183315376/4 = 45828844
+	10% of 45828844 = 4582884.4 = 183315376/40
+
+Step 5: Get 10% of the reads.
+
+-4582884 SRR826660_1.fastq > SRR826660_1_10percent.fastq
+
+head -4582884 SRR826660_2.fastq > SRR826660_2_10percent.fastq
+head -458288 SRR826660_1.fastq > SRR826660_1_1percent.fastq
+head -458288 SRR826660_2.fastq > SRR826660_2_1percent.fastq
+
+Step 6: Run bowtie-build on a Fasta sequence
+ -p bowtie-build ./datasets/neurospora_crassa_or74a_12_supercontigs.fasta ./NcraOR74A_LGVII.fasta.refseq
+
+Step 7: To Map Our Reads with v=0 and m=1
+ -p bowtie \
+ -p 2 \
+ -t \
+ -a \
+ -v 0 \
+ -m 1 \
+ --best \
+ --strata \
+ ./NcraOR74A_LGVII.fasta.refseq \
+ -q \
+ -1 SRR826660_1.fastq \
+ -2 SRR826660_2.fastq \
+ -S SRR826660_12.AQC.Paired.001.v0m1.sam
+
+Step 8: Index Fasta File:
+
+samtools faidx neurospora_crassa_or74a_12_supercontigs.fasta 
+
+Step 9: Upload to IGV and visualized the displayed data. 
+
+/usr/local/bioinfosoft/IGV/igv.sh
+
+Step 10: Results: 0% mapping meaning that the SRR826660 is not part of the Neurospora crassa genome and it belongs to another species. 
+
+
+
+
+
+
+
