@@ -40,25 +40,40 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Start of document
 \begin{document}
-\title{Title of the article.}
+\title{Homework for June 26, 2014}
 \date{\today}
-\author{Nome Cognomes\thanks{Email correspondence to: \href{mailto:email-id@domain.url}{\Email\ email-id@domain.url}}\\
-	Name of Organization
+\author{Zhiyang Ong\thanks{Email correspondence to: \href{mailto:ongz@acm.org}{\Email\ ongz@acm.org}}\\
+	Texas A\&M University
 }
 \maketitle
 
 
 \begin{abstract} 
-This is the homework for June 26, 2014. It contains a description of the comparison of different SAM files
+This is the homework for June 26, 2014. It contains a description of the comparison of different SAM files. It also contains hypotheses for why the given SRA82660 sequences do not map to chromosome 7 (linkage group VII) of the {\it Neurospora crassa} species.
 \end{abstract}
 
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Acknowledgements*}
+\label{sec:Acknowledgement*}
+
+I acknowledge that I have collaborated with my project teammates Diana Medina and Selene Howe to complete this homework. Specifically, we discussed some hypotheses
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Section 1}
-\label{sec:mysection1}
+\section{Comparison of different SAM files}
+\label{sec:ComparisonofDifferentSAMfiles}
+
+
+
+
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -66,13 +81,13 @@ This is the homework for June 26, 2014. It contains a description of the compari
 \label{sec:Hypothesis}
 
 
-A hypothesis is that the SRA82660 sequence is not part of the {\it Neurospora crassa} genome, and it belongs to another species.
+A hypothesis is that the SRA82660 sequence is not part of the {\it Neurospora crassa} genome. That is, it belongs to another species. Proceedure \ref{lst:SRA82660notNeurosporacrassa}
 %genome sequence is wrong.
 
 
 \begin{codebox}
 \Procname{$\proc{Test if SRA82660 sequence is part of the {\it Neurospora crassa} genome}({\it Golden/Reference Model})$}
-\label{lst:LABEL}
+\label{lst:SRA82660notNeurosporacrassa}
 \zi \Comment {\it Golden/Reference Model}
 %\zi \Comment {\it Input ARGUMENT \#2: Definition}
 \li	\If $[$given SRA82660 subsequence does not map to golden model$]$
@@ -85,13 +100,13 @@ A hypothesis is that the SRA82660 sequence is not part of the {\it Neurospora cr
 	\Then
 \li		Conclusion \#1: The given SRA82660 subsequence is part of the genome.
 %\li		Conclusion \#2: The given SRA82660 subsequence does not contain chromosome 7
-\li	\ElseNoIf $[$Condition$]$
-\li	
-\li	\Else
-\li	
+%\li	\ElseNoIf $[$Condition$]$
+%\li	
+%\li	\Else
+%\li	
 	\End
-\li BODY OF THE PROCEDURE
-\zi	\Comment {\it What is the output of this procedure?}
+%\li BODY OF THE PROCEDURE
+%\zi	\Comment {\it What is the output of this procedure?}
 \li	\Return\end{codebox}
 
 

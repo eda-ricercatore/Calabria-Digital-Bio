@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/python
 
-#	This BASH shell script is written by Zhiyang Ong to processing with BAM and SAM files.
+#	This Python script is written by Zhiyang Ong to determine the number of lines in the trimmed file.
 
 #	The MIT License (MIT)
 
@@ -16,6 +16,10 @@
 
 ######################################################
 
+#	Import modules from the Python Standard Library
+import glob
+import os
+#import system
 
 
 
@@ -23,40 +27,16 @@
 
 
 
-######################################################
-#	Procedure to test if the SRA82660 sequence is part of the Neurospora crassa genome.
-
-echo "==============================================="
-echo "Procedure to test if the SRA82660 sequence is part of the Neurospora crassa genome."
-echo ""
-#echo "Run bowtie-build on a Fasta sequence with golden model."
-#bowtie-build neurospora_crassa_or74a_12_supercontigs.fasta ./NcraOR74A_LGVII.fasta.refseq
-#echo ""
-#echo "Get the SRA file for SRR826660."
-#wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR826/SRR826660/SRR826660.sra
-
-
-#echo "Prepare the FastQ file."
-#time -p ~/corsi/digital_biology/20140612/sratoolkit.2.3.5-2-ubuntu64/bin/fastq-dump --split-files SRR826660.sra
-#echo ""
-#echo "Run FastQC to check the FastQ files"
-#fastqc SRR826660_1.fastq
-#fastqc SRR826660_2.fastq
 
 
 
-# Determine the number of reads in the file.
-#more ./SRR826660_1.fastq | wc -l
-#more ./SRR826660_2.fastq | wc -l
-# Divide expression by 4.
-# Get 10% of the result to get 10% of the reads.
 
-#	Go Trojans >more ./SRR826660_1.fastq | wc -l
-#	183315376
-#	Go Trojans >
 
-#	183315376/4 = 45828844
-#	10% of 45828844 = 4582884.4 = 183315376/40
+
+
+
+
+
 
 
 
