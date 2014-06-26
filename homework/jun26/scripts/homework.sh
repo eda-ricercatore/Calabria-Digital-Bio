@@ -35,10 +35,13 @@ echo ""
 #echo "Get the SRA file for SRR826660."
 #wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR826/SRR826660/SRR826660.sra
 
-echo "Prepare the FastQ file."
-~/corsi/digital_biology/20140612/sratoolkit.2.3.5-2-ubuntu64/bin/fastq-dump --split-files SRR826660.sra
-echo ""
-echo "fastqc SRR826660.fastqc"
+
+#echo "Prepare the FastQ file."
+#time -p ~/corsi/digital_biology/20140612/sratoolkit.2.3.5-2-ubuntu64/bin/fastq-dump --split-files SRR826660.sra
+#echo ""
+echo "Run FastQC to check the FastQ files"
+fastqc SRR826660_1.fastq
+fastqc SRR826660_2.fastq
 
 
 
