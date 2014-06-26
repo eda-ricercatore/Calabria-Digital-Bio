@@ -29,14 +29,16 @@
 echo "==============================================="
 echo "Procedure to test if the SRA82660 sequence is part of the Neurospora crassa genome."
 echo ""
-echo "Run bowtie-build on a Fasta sequence with golden model."
-bowtie-build neurospora_crassa_or74a_12_supercontigs.fasta ./NcraOR74A_LGVII.fasta.refseq
+#echo "Run bowtie-build on a Fasta sequence with golden model."
+#bowtie-build neurospora_crassa_or74a_12_supercontigs.fasta ./NcraOR74A_LGVII.fasta.refseq
+#echo ""
+#echo "Get the SRA file for SRR826660."
+#wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR826/SRR826660/SRR826660.sra
+
+echo "Prepare the FastQ file."
+~/corsi/digital_biology/20140612/sratoolkit.2.3.5-2-ubuntu64/bin/fastq-dump --split-files SRR826660.sra
 echo ""
-echo "Get the SRA file for SRR826660."
-wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR826/SRR826660/SRR826660.sra
-
-
-
+echo "fastqc SRR826660.fastqc"
 
 
 
