@@ -1,5 +1,4 @@
-#!/usr/bin/python
-
+#!/bin/sh
 
 #	This BASH shell script is written by Zhiyang Ong to processing with BAM and SAM files.
 
@@ -17,66 +16,32 @@
 
 ######################################################
 
-#	Import modules from the Python Standard Library
-import glob
-import os
-#import system
+
+
+
 
 
 
 
 ######################################################
-#	Main body of the script
+#	Procedure to test if the SRA82660 sequence is part of the Neurospora crassa genome.
 
-print "Run bowtie-build on a Fasta sequence with golden model."
-os.system("bowtie-build neurospora_crassa_or74a_12_supercontigs.fasta ./NcraOR74A_LGVII.fasta.refseq")
-
-print "To Map Our Reads with v=0 and m=1"
-os.system("ln -s /opt/digitalbiology/Mapping/001/0400VV67_L50_PERD1.001.fastq")
-os.system("ln -s /opt/digitalbiology/Mapping/001/0400VV67_L50_PERD2.001.fastq")
-
-
-
-
+echo "==============================================="
+echo "Procedure to test if the SRA82660 sequence is part of the Neurospora crassa genome."
+echo ""
+echo "Run bowtie-build on a Fasta sequence with golden model."
+bowtie-build neurospora_crassa_or74a_12_supercontigs.fasta ./NcraOR74A_LGVII.fasta.refseq
+echo ""
+echo "Get the SRA file for SRR826660."
+wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR826/SRR826660/SRR826660.sra
 
 
 
 
-print "############################################"
-print "	Link the FastQ files."
-os.system("ln -s /opt/digitalbiology/Mapping/001/0400VV67_L50_PERD1.001.fastq")
-os.system("ln -s /opt/digitalbiology/Mapping/001/0400VV67_L50_PERD2.001.fastq")
-print "	Get the Genome files."
-os.system("cp -vR /opt/digitalbiology/NcrassaFungiDB3 .")
-
-"""
-os.system("")
-os.system("")
-os.system("")
-"""
-print "	Indexing a Fasta File or a Genome"
-
-#ln -s ../NcrassaFungiDB3/Ncrassa_OR74A/fasta/NcraOR74A_LGVII.fasta
-print "	Run bowtie-build on a Fasta sequence."
-os.system("bowtie-build ../NcrassaFungiDB3/Ncrassa_OR74A/fasta/NcraOR74A_LGVII.fasta ./NcraOR74A_LGVII.fasta.refseq")
-
-print "	For each SAM file, do the following:"
-
-#os.system("pwd; date")
 
 
-#	For files in the current directory,
-for file in os.listdir("./"):
-	#	If the file extension is ".txt",
-    if file.endswith(".txt"):
-        print file
 
 
-"""
-str = "ciao-"
-str = str + "mondo"
-print str
-"""
 
 
 
