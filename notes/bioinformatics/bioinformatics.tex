@@ -112,13 +112,13 @@ Some calculations to determine such information is demonstrated as follows: \vsp
 \item 99 = 64 + 32 + 2+ 1
 \end{enumerate}
 
-Convert {\tt SAM} files to {\tt BAM} files, which are faster to read. {\tt SAM} files are written according to when they (i.e., the subsequences) are found/read; that is, they are written as the subsequences are found. On the other hand, the {\tt BAM} files can be sorted according to their coordinates of the beginning (and, hence, the end) of the subsequences; {\it verify this!!!}. These {\tt BAM} files are sorted from left to right. For control
+Convert {\tt SAM} files to {\tt BAM} files, which are faster to read. {\tt SAM} files are written according to when they (i.e., the subsequences) are found/read; that is, they are written as the subsequences are found. On the other hand, the {\tt BAM} files can be sorted according to their coordinates of the beginning (and, hence, the end) of the subsequences; {\it verify this!!!}. These {\tt BAM} files are sorted from left to right. For scientific/experimental control, show that the {\tt SAM} file that is re-converted from {\tt BAM} is sorted; that is, check that the recovered {\tt SAM}-to-{\tt BAM}-to-{\tt SAM} file is sorted. \\
 
+Use {\tt Fasta} (.fasta) and {\tt .fa} files. Sorted {\tt SAM} files have no header. Reads are mapped and primed in ordered fashion, without the header. They can't be displayed on their own, and require another file for its contents to be displayed. Specifically, an index {\tt BAM} file needs to be provided with the sorted {\tt BAM} file. When the data is viewed (with the script {\tt ./igv.sh}), it shows valleys and peaks. The peaks indicate a good probability of having contigs. The valleys indicate a good probability of not having connected contigs (or a high probability of not having a connection is high); use make pair to ``weaken connection''??? \dots\ The colored regions are repeated subsequences that indicate polymorphism. \\
 
+Grab???, scrub???, clone, and sequence DNA. Extract the DNA, build its library, and sequence without cloning. Structure DNA $\longleftrightarrow$ sequence, making the library and PCR for sequencing bad. Base-call qualities are rejected. There exists different levels of PCR, or different uses of PCR in this process. When errors are present in the displayed DNA sequence, it could be because something was wrong with the PCR or there were problems during sequencing. The centropid (or centromere)\dots\ exists in mitochondrial DNA (or mtDNA)? It repeats regularly. \\
 
-
-
-
+There exists two {\tt Bowtie} programs. {\tt Bowtie} is different from {\tt Bowtie 2}, and they require different input file formats. Hence, {\tt Bowtie 2} files are for {\tt Bowtie 2} only. \#1 mates indicate forward reads, and \#2 mates indicate reverse reads.
 
 
 
