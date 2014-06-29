@@ -120,8 +120,8 @@ def remove_temp(s_dir, file_ext)
 					if (File.extname(temp_i)).eql?(f_ext)
 						# Delete the file from repository and local file system.
 #						system("hg remove -f #{temp_i}")
-						system("git rm #{temp_i}")
 						File.delete(temp_i)
+						system("git rm #{temp_i}")
 						# Ignore remaining file extensions
 						break
 					end

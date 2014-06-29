@@ -4,7 +4,6 @@
 	This Python script is written by Zhiyang Ong to test his
 	Python script to build a database of NCBI SRA files.
 	
-	The script is named: build_sra_seq_db.py
 	
 	Synopsis:
 	Carry out automated regression testing to see if

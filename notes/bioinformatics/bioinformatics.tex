@@ -41,7 +41,7 @@ At the end of the class, I should be able to use {\tt Bowtie} (or a comparable b
 
 Some advice regarding bioinformatics are: \vspace{-0.3cm}
 \begin{enumerate} \itemsep -4pt
-\item When doing a lot of mapping (e.g., genome mapping and transcriptome mapping), deposit all indices in a directory. Don't make multiple copies of files/directories. This redundancy takes up a lot of storage space on the hard disks/drives. When operations/processes are carried out on these copies, they will bog/slow down the computer network.
+\item When doing a lot of mapping (e.g., genome mapping and transcriptome mapping), put aliases to all datasets in a directory. Don't make multiple copies of files/directories. This redundancy takes up a lot of storage space on the hard disks/drives. When operations/processes are carried out on these copies, they will bog/slow down the computer network. 
 \end{enumerate}
 
 
@@ -51,7 +51,10 @@ Some advice regarding bioinformatics are: \vspace{-0.3cm}
 \section{Bowtie}
 \label{sec:Bowtie}
 
-Some flags for Bowtie (Version 1) are discussed as follows: \vspace{-0.3cm}
+{\tt Bowtie} is a software application for sequence analysis that reads short reads from a DNA/genomic sequence \cite{Langmead2014}.
+
+
+Some flags for {\tt Bowtie} (Version 1) are discussed as follows: \vspace{-0.3cm}
 \begin{enumerate} \itemsep -4pt
 \item -v0. Do not allow any misalignment errors.
 \item -m1. Do not report multiple ($> 1$) misalignment errors. \vspace{-0.3cm}
@@ -70,6 +73,26 @@ Some flags for Bowtie (Version 1) are discussed as follows: \vspace{-0.3cm}
 \item 
 \end{enumerate}
 
+\begin{figure}[h]
+\centering 
+\includegraphics[width=6in]{./bioinformatics/pics/bowtie_example}
+\caption{An example of Bowtie, as it tries to align a subsequence in a DNA sequence with another subsequence in another DNA sequence.}
+\label{fig:BowtieExample}
+\end{figure}
+
+An example of DNA sequences being read by {\tt Bowtie} is shown in Figure \ref{fig:BowtieExample}. \\
+
+
+Separate the reads into different classes, especially for genomes with lots of single nucleotide polymorphism (SNPS) $\rightarrow$ lots of inversion that need to be sorted.
+
+
+
+
+
+
+
+
+
 
 
 
@@ -78,7 +101,7 @@ Some flags for Bowtie (Version 1) are discussed as follows: \vspace{-0.3cm}
 \section{SAM File Format}
 \label{sec:SAMFileFormat}
 
-The second field of the SAM File Format indicates various information about the alignment and pairing. It indicates the call of a proper read, or align read. The majority of the reads don't map well because we are mapping only to the smallest chromosome of the species. The Neurospora crassa species has 7 chromosomes\dots\ Without paired reads, the numbers are different.
+The second field of the {\tt SAM} file format indicates various information about the alignment and pairing. It indicates the call of a proper read, or align read. The majority of the reads don't map well because we are mapping only to the smallest chromosome of the species. The {\it Neurospora crassa} species has 7 chromosomes\dots\ Without paired reads, the numbers are different. \\
 
 Some calculations to determine such information is demonstrated as follows: \vspace{-0.3cm}
 \begin{enumerate} \itemsep -4pt
@@ -86,9 +109,10 @@ Some calculations to determine such information is demonstrated as follows: \vsp
 \item 141 = 128 + 8 + 4 + 1
 \item 163 = 128 + 32 + 2 + 1. Properly aligned.
 \item 83 = 64 + 16 + 2 + 1
+\item 99 = 64 + 32 + 2+ 1
 \end{enumerate}
 
-Separate the reads into different classes, especially for genomes with lots of single nucleotide polymorphism (SNPS).
+Convert {\tt SAM} files to {\tt BAM} files, which are faster to read. {\tt SAM} files are written according to when they (i.e., the subsequences) are found/read; that is, they are written as the subsequences are found. On the other hand, the {\tt BAM} files can be sorted according to their coordinates of the beginning (and, hence, the end) of the subsequences; {\it verify this!!!}. These {\tt BAM} files are sorted from left to right. For control
 
 
 
