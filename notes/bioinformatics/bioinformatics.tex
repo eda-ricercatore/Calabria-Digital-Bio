@@ -118,7 +118,57 @@ Use {\tt Fasta} (.fasta) and {\tt .fa} files. Sorted {\tt SAM} files have no hea
 
 Grab???, scrub???, clone, and sequence DNA. Extract the DNA, build its library, and sequence without cloning. Structure DNA $\longleftrightarrow$ sequence, making the library and PCR for sequencing bad. Base-call qualities are rejected. There exists different levels of PCR, or different uses of PCR in this process. When errors are present in the displayed DNA sequence, it could be because something was wrong with the PCR or there were problems during sequencing. The centropid (or centromere)\dots\ exists in mitochondrial DNA (or mtDNA)? It repeats regularly. \\
 
-There exists two {\tt Bowtie} programs. {\tt Bowtie} is different from {\tt Bowtie 2}, and they require different input file formats. Hence, {\tt Bowtie 2} files are for {\tt Bowtie 2} only. \#1 mates indicate forward reads, and \#2 mates indicate reverse reads.
+There exists two {\tt Bowtie} programs. {\tt Bowtie} is different from {\tt Bowtie 2}, and they require different input file formats. Hence, {\tt Bowtie 2} files are for {\tt Bowtie 2} only. \#1 mates indicate forward reads, and \#2 mates indicate reverse reads. Concordantly, read1 and read2 must be mapped, as expected. Else, if they are not mapped, they cannot be used for genome assembly [discordantly]. \\
+
+{\tt Bowtie 2} has two mapping modes, which are different to separate. They are end-to-end mapping and local mapping. \\
+
+For the end-to-end mapping mode of {\tt Bowtie 2}: \vspace{-0.3cm}
+\begin{enumerate} \itemsep -4pt
+\item Very fast global mapping
+\item Fast global mapping
+\item Sensitive global mapping
+\item Very sensitive global mapping
+\end{enumerate}
+
+For the local mapping mode of {\tt Bowtie 2}: \vspace{-0.3cm}
+\begin{enumerate} \itemsep -4pt
+\item Very fast local mapping
+\item Fast local mapping
+\item Sensitive local mapping
+\item Very sensitive local mapping
+\end{enumerate}
+
+Control the number to change the sensitivity, so that diversions can be dealt with. The computational time taken (i.e., performance of the procedure/software) changes with respect to sensitivity. That is, the performance of the {\tt Bowtie 2} algorithm is proportional to sensitivity. As sensitivity increases, the time taken (or computational complexity, or performance) increases. \\
+
+Genome assembly needs to be carried out, since we fragment DNA and now we have to assemble it. Copy the mapped files and look at the regions between n3m1 and n3m100, and display the results. Show how the {\tt -n} and {\tt -m} parameters affect mapping; that is, genomic mapping is affected by the parameters. Thus far, we are mapping DNA reads. \\
+
+When mooing RNA reads, things are more different. RNA has lots of contigs, which form a library. Genomic maps are generated from transcriptome mapping, which has its equivalent genome (and, thus, its own contigs). They depend on contigs, and are products of the genomic assembly process. Here, we are constructing the DNA sequence from the contigs. \\
+
+Reads exist in eons. They map to introns/exons. However, at the boundaries of introns and exons, they do not follow rules. Therefore, we cannot use {\tt Bowtie} to resolve the mapping. Consequently, we need to carry out transcriptome mapping. Genomic assembly: randomly assemble 1 read with another read that overlaps it at the edges. This construction of contigs using contiguous DNA sequences builds up the genome. Again, look for overlaps in the DNA sequences to assemble the genome. Instead of reads, programs grab a k-mer (i.e., n-tuple and n-gram Nucleic acid sequence, amino acid sequence, or polymer)??? \dots\ For a k-mer of 13, it refers to a k-mer of 13 bases. \\
+
+Our reads are of 50 bases. {\tt Velvet} is a Blue Gene graft-based assembler. \\
+
+Do not print graphs with bases, because they are huge. Assemble fractions of chromosomes (linkage to Group VII of the {\it Neurospora species}. \\
+
+
+Suggestions for 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
