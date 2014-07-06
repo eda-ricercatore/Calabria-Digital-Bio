@@ -1,10 +1,10 @@
 Calabria-Digital-Bio
 ====================
 
-Repository for computer programs written for my digital biology class.
+Repository for my notes and computer programs written for my bioinformatics (digital biology) class.
 
 
-My teammates for the class project are: Diana Medina and Selene Howe.
+My teammates for the class project are: Ms. Diana Medina and Ms. Selene Howe.
 
 
 
